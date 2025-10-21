@@ -1,0 +1,7 @@
+{
+  "drama": ["The Blacklist", "Das Boot", "The Sopranos", "How I Met Your Mother"],
+  "klassiker": ["Der Pate", "Scarface", "Pulp Fiction", "Baby Driver", "Spiel mir das Lied vom Tod"],
+  "comedy": ["Family Guy", "South Park", "Futurama", "BoJack Horseman", "Rick and Morty"],
+  "kult": ["Pulp Fiction", "Baby Driver", "Der Pate", "Scarface", "Goodfellas", "Heat", "Sicario", "Collateral", "Spiel mir das Lied vom Tod"],
+  "doku": ["Terra X", "Die Deutschen", "Arte Doku"]
+}
