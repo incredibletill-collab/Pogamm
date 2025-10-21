@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Mein TV-Programm</title>
+</head>
+<body>
+  <h1>Persönliches TV-Programm</h1>
+  <div id="schedule"></div>
+
+  <script>
+    const JUSTWATCH_PROXY_URL = "https://programm-teevau.vercel.app/api/api_proxy"; // <-- hier URL eintragen
+
+    async function checkAvailability(title) {
+      const res = await fetch(`${JUSTWATCH_PROXY_URL}?query=${encodeURIComponent(title)}`);
+      const data = await res.json();
+      return data;
+    }
+
+    async function init() {
+      const titles = ["The Blacklist", "Das Boot", "Der Pate"];
+      const container = document.getElementById("schedule");
+
+      for (const t of titles) {
+        const info = await checkAvailability(t);
+        const div = document.createElement("div");
+        div.textContent = `${info.title} — Angebote: ${info.offers.map(o => o.provider).join(", ")}`;
+        container.appendChild(div);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
